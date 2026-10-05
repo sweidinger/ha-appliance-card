@@ -7148,4 +7148,34 @@ check('texte brut decoche : le libelle de la card',
   check('editeur fontaine : niveau d\'eau', /Water level/.test(eh), true);
 }
 
+// == An image of the owner's own =============================================
+// It replaces the drawing, for every state or per state, and shows the state
+// as a ring that breathes while the appliance works.
+{
+  const W = { 'sensor.w': { state: 'run', attributes: {} } };
+  const wIdle = { 'sensor.w': { state: 'idle', attributes: {} } };
+  const base = { appliance_type: 'washer', state_entity: 'sensor.w', state_map: { run: 'running', idle: 'idle' } };
+  const img = h => (/<div class="machine user-image[^"]*"[^>]*><img src="([^"]*)"/.exec(h) || [, null])[1];
+  check('image : remplace le dessin', img(render({ ...base, image: '/local/w.png' }, W)), '/local/w.png');
+  check('image : plus de tambour', /class="drum/.test(render({ ...base, image: '/local/w.png' }, W)), false);
+  check('image : par etat, sur l\'etat brut', img(render({ ...base, image: '/local/w.png', state_images: { run: '/local/run.png' } }, W)), '/local/run.png');
+  check('image : par etat, sur le mot de la carte', img(render({ ...base, image: '/local/w.png', state_images: { running: '/local/r.png' } }, W)), '/local/r.png');
+  check('image : sinon l\'image commune', img(render({ ...base, image: '/local/w.png', state_images: { running: '/local/r.png' } }, wIdle)), '/local/w.png');
+  check('image : un etat seul suffit', img(render({ ...base, state_images: { idle: '/local/i.png' } }, wIdle)), '/local/i.png');
+  check('image : et sans lui, le dessin', /class="machine user-image/.test(render({ ...base, state_images: { idle: '/local/i.png' } }, W)), false);
+  check('image : le cercle respire en marche', /class="machine user-image active"/.test(render({ ...base, image: '/local/w.png' }, W)), true);
+  check('image : immobile a l\'arret', /class="machine user-image"/.test(render({ ...base, image: '/local/w.png' }, wIdle)), true);
+  check('image : une adresse web', img(render({ ...base, image: 'https://example.com/w.png' }, W)), 'https://example.com/w.png');
+  check('image : pas de javascript', /class="machine user-image/.test(render({ ...base, image: 'javascript:alert(1)' }, W)), false);
+  check('image : echappee', /src="\/local\/a&quot;b.png"/.test(render({ ...base, image: '/local/a"b.png' }, W)), true);
+  check('image : remplir au besoin', /--ac-image-fit: cover/.test(render({ ...base, image: '/local/w.png', image_fit: 'cover' }, W)), true);
+  check('image : compact, rien du tout', /class="machine user-image/.test(render({ ...base, image: '/local/w.png', compact: true }, W)), false);
+  check('image : la fontaine par son mode', img(render({ appliance_type: 'pet_fountain', state_entity: 'switch.f', filter_life_entity: 'sensor.fd', image: '/local/f.png', state_images: { filter: '/local/filter.png' } },
+    { 'switch.f': { state: 'on', attributes: {} }, 'sensor.fd': { state: '1', attributes: { unit_of_measurement: 'd' } } })), '/local/filter.png');
+  const ed = new Editor();
+  ed.setConfig({ type: 'custom:ha-appliance-card', appliance_type: 'washer', state_entity: 'sensor.w' });
+  ed.hass = HASS(W);
+  check('editeur image : le champ est propose', /data-field="image"/.test(markup(ed._root)), true);
+}
+
 report();

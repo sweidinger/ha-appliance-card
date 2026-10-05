@@ -114,7 +114,7 @@ const T = {
     section_cups: "Number of cups", section_strength: "Coffee strength",
     type_rice_cooker: "Rice cooker", keep_warm: "Keeping warm",
     language: "Language", language_auto: "Follow Home Assistant",
-    illustration_color: "Appliance colour", color_auto: "Follow the theme",
+    illustration_color: "Appliance colour", image: "Own image (replaces the drawing)", color_auto: "Follow the theme",
     color_white: "White", color_grey: "Grey", color_black: "Black", color_red: "Dark red",
     controls_activation: "Controls", activation_tap: "Tap to run", activation_hold: "Hold to run", activation_off: "Locked (hold opens the entity)",
     type_water_heater: "Water heater", type_boiler: "Boiler", type_heat_pump: "Heat pump",
@@ -253,7 +253,7 @@ const T = {
     section_cups: "Nombre de tasses", section_strength: "Force du caf\u00e9",
     type_rice_cooker: "Cuiseur \u00e0 riz", keep_warm: "Maintien au chaud",
     language: "Langue", language_auto: "Suivre Home Assistant",
-    illustration_color: "Couleur de l'appareil", color_auto: "Suivre le th\u00e8me",
+    illustration_color: "Couleur de l'appareil", image: "Image personnelle (remplace le dessin)", color_auto: "Suivre le th\u00e8me",
     color_white: "Blanc", color_grey: "Gris", color_black: "Noir", color_red: "Rouge fonc\u00e9",
     controls_activation: "Commandes", activation_tap: "Appui court pour lancer", activation_hold: "Appui long pour lancer", activation_off: "Verrouill\u00e9es (appui long ouvre l'entit\u00e9)",
     type_water_heater: "Chauffe-eau", type_boiler: "Chaudi\u00e8re", type_heat_pump: "Pompe \u00e0 chaleur",
@@ -392,7 +392,7 @@ const T = {
     section_cups: "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0447\u0430\u0448\u0435\u043a", section_strength: "\u041a\u0440\u0435\u043f\u043e\u0441\u0442\u044c \u043a\u043e\u0444\u0435",
     type_rice_cooker: "\u0420\u0438\u0441\u043e\u0432\u0430\u0440\u043a\u0430", keep_warm: "\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435 \u0442\u0435\u043f\u043b\u0430",
     language: "\u042f\u0437\u044b\u043a", language_auto: "\u0421\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u044c Home Assistant",
-    illustration_color: "\u0426\u0432\u0435\u0442 \u043f\u0440\u0438\u0431\u043e\u0440\u0430", color_auto: "\u041a\u0430\u043a \u0432 \u0442\u0435\u043c\u0435",
+    illustration_color: "\u0426\u0432\u0435\u0442 \u043f\u0440\u0438\u0431\u043e\u0440\u0430", image: "\u0421\u0432\u043e\u0451 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 (\u0432\u043c\u0435\u0441\u0442\u043e \u0440\u0438\u0441\u0443\u043d\u043a\u0430)", color_auto: "\u041a\u0430\u043a \u0432 \u0442\u0435\u043c\u0435",
     color_white: "\u0411\u0435\u043b\u044b\u0439", color_grey: "\u0421\u0435\u0440\u044b\u0439", color_black: "\u0427\u0451\u0440\u043d\u044b\u0439", color_red: "\u0422\u0451\u043c\u043d\u043e-\u043a\u0440\u0430\u0441\u043d\u044b\u0439",
     controls_activation: "\u041a\u043d\u043e\u043f\u043a\u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f", activation_tap: "\u041d\u0430\u0436\u0430\u0442\u0438\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442", activation_hold: "\u0414\u043e\u043b\u0433\u043e\u0435 \u043d\u0430\u0436\u0430\u0442\u0438\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442", activation_off: "\u0417\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d\u044b (\u0434\u043e\u043b\u0433\u043e\u0435 \u043d\u0430\u0436\u0430\u0442\u0438\u0435 \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u043e\u0431\u044a\u0435\u043a\u0442)",
     type_water_heater: "\u0412\u043e\u0434\u043e\u043d\u0430\u0433\u0440\u0435\u0432\u0430\u0442\u0435\u043b\u044c", type_boiler: "\u041a\u043e\u0442\u0451\u043b", type_heat_pump: "\u0422\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u043d\u0430\u0441\u043e\u0441",
@@ -531,7 +531,7 @@ const T = {
     section_cups: "Anzahl Tassen", section_strength: "Kaffeest\u00e4rke",
     type_rice_cooker: "Reiskocher", keep_warm: "Warmhalten",
     language: "Sprache", language_auto: "Home Assistant folgen",
-    illustration_color: "Ger\u00e4tefarbe", color_auto: "Theme folgen",
+    illustration_color: "Ger\u00e4tefarbe", image: "Eigenes Bild (ersetzt die Zeichnung)", color_auto: "Theme folgen",
     color_white: "Wei\u00df", color_grey: "Grau", color_black: "Schwarz", color_red: "Dunkelrot",
     controls_activation: "Bedienelemente", activation_tap: "Tippen zum Ausf\u00fchren", activation_hold: "Gedr\u00fcckt halten zum Ausf\u00fchren", activation_off: "Gesperrt (Halten \u00f6ffnet die Entit\u00e4t)",
     type_water_heater: "Warmwasserspeicher", type_boiler: "Heizkessel", type_heat_pump: "W\u00e4rmepumpe",
@@ -670,7 +670,7 @@ const T = {
     section_cups: "N\u00famero de tazas", section_strength: "Intensidad del caf\u00e9",
     type_rice_cooker: "Arrocera", keep_warm: "Manteniendo caliente",
     language: "Idioma", language_auto: "Seguir a Home Assistant",
-    illustration_color: "Color del aparato", color_auto: "Seguir el tema",
+    illustration_color: "Color del aparato", image: "Imagen propia (sustituye al dibujo)", color_auto: "Seguir el tema",
     color_white: "Blanco", color_grey: "Gris", color_black: "Negro", color_red: "Rojo oscuro",
     controls_activation: "Controles", activation_tap: "Tocar para ejecutar", activation_hold: "Mantener pulsado para ejecutar", activation_off: "Bloqueados (mantener pulsado abre la entidad)",
     type_water_heater: "Termo", type_boiler: "Caldera", type_heat_pump: "Bomba de calor",
@@ -809,7 +809,7 @@ const T = {
     section_cups: "Numero di tazze", section_strength: "Intensit\u00e0 del caff\u00e8",
     type_rice_cooker: "Cuociriso", keep_warm: "Mantenimento in caldo",
     language: "Lingua", language_auto: "Segui Home Assistant",
-    illustration_color: "Colore dell'elettrodomestico", color_auto: "Segui il tema",
+    illustration_color: "Colore dell'elettrodomestico", image: "Immagine propria (sostituisce il disegno)", color_auto: "Segui il tema",
     color_white: "Bianco", color_grey: "Grigio", color_black: "Nero", color_red: "Rosso scuro",
     controls_activation: "Comandi", activation_tap: "Tocca per avviare", activation_hold: "Tieni premuto per avviare", activation_off: "Bloccati (tenere premuto apre l'entit\u00e0)",
     type_water_heater: "Scaldabagno", type_boiler: "Caldaia", type_heat_pump: "Pompa di calore",
@@ -948,7 +948,7 @@ const T = {
     section_cups: "Aantal kopjes", section_strength: "Koffiesterkte",
     type_rice_cooker: "Rijstkoker", keep_warm: "Warmhouden",
     language: "Taal", language_auto: "Home Assistant volgen",
-    illustration_color: "Kleur van het apparaat", color_auto: "Thema volgen",
+    illustration_color: "Kleur van het apparaat", image: "Eigen afbeelding (vervangt de tekening)", color_auto: "Thema volgen",
     color_white: "Wit", color_grey: "Grijs", color_black: "Zwart", color_red: "Donkerrood",
     controls_activation: "Bediening", activation_tap: "Tikken om uit te voeren", activation_hold: "Ingedrukt houden om uit te voeren", activation_off: "Vergrendeld (ingedrukt houden opent de entiteit)",
     type_water_heater: "Boiler", type_boiler: "Cv-ketel", type_heat_pump: "Warmtepomp",
@@ -1087,7 +1087,7 @@ const T = {
     section_cups: "N\u00famero de ch\u00e1venas", section_strength: "Intensidade do caf\u00e9",
     type_rice_cooker: "Panela de arroz", keep_warm: "A manter quente",
     language: "Idioma", language_auto: "Seguir o Home Assistant",
-    illustration_color: "Cor do eletrodom\u00e9stico", color_auto: "Seguir o tema",
+    illustration_color: "Cor do eletrodom\u00e9stico", image: "Imagem pr\u00f3pria (substitui o desenho)", color_auto: "Seguir o tema",
     color_white: "Branco", color_grey: "Cinzento", color_black: "Preto", color_red: "Vermelho escuro",
     controls_activation: "Comandos", activation_tap: "Tocar para executar", activation_hold: "Manter premido para executar", activation_off: "Bloqueados (manter premido abre a entidade)",
     type_water_heater: "Termoacumulador", type_boiler: "Caldeira", type_heat_pump: "Bomba de calor",
@@ -1226,7 +1226,7 @@ const T = {
     section_cups: "Antal koppar", section_strength: "Kaffestyrka",
     type_rice_cooker: "Riskokare", keep_warm: "Varmh\u00e5llning",
     language: "Spr\u00e5k", language_auto: "F\u00f6lj Home Assistant",
-    illustration_color: "Apparatens f\u00e4rg", color_auto: "F\u00f6lj temat",
+    illustration_color: "Apparatens f\u00e4rg", image: "Egen bild (ers\u00e4tter teckningen)", color_auto: "F\u00f6lj temat",
     color_white: "Vit", color_grey: "Gr\u00e5", color_black: "Svart", color_red: "M\u00f6rkr\u00f6d",
     controls_activation: "Kontroller", activation_tap: "Tryck f\u00f6r att k\u00f6ra", activation_hold: "H\u00e5ll in f\u00f6r att k\u00f6ra", activation_off: "L\u00e5sta (h\u00e5ll in \u00f6ppnar entiteten)",
     type_water_heater: "Varmvattenberedare", type_boiler: "Panna", type_heat_pump: "V\u00e4rmepump",
@@ -1365,7 +1365,7 @@ const T = {
     section_cups: "Antall kopper", section_strength: "Kaffestyrke",
     type_rice_cooker: "Riskoker", keep_warm: "Varmholding",
     language: "Spr\u00e5k", language_auto: "F\u00f8lg Home Assistant",
-    illustration_color: "Farge p\u00e5 apparatet", color_auto: "F\u00f8lg temaet",
+    illustration_color: "Farge p\u00e5 apparatet", image: "Eget bilde (erstatter tegningen)", color_auto: "F\u00f8lg temaet",
     color_white: "Hvit", color_grey: "Gr\u00e5", color_black: "Svart", color_red: "M\u00f8rker\u00f8d",
     controls_activation: "Kontroller", activation_tap: "Trykk for \u00e5 kj\u00f8re", activation_hold: "Hold inne for \u00e5 kj\u00f8re", activation_off: "L\u00e5st (hold inne \u00e5pner enheten)",
     type_water_heater: "Varmtvannsbereder", type_boiler: "Kjele", type_heat_pump: "Varmepumpe",
@@ -1504,7 +1504,7 @@ const T = {
     section_cups: "Antal kopper", section_strength: "Kaffestyrke",
     type_rice_cooker: "Riskoger", keep_warm: "Varmholdning",
     language: "Sprog", language_auto: "F\u00f8lg Home Assistant",
-    illustration_color: "Apparatets farve", color_auto: "F\u00f8lg temaet",
+    illustration_color: "Apparatets farve", image: "Eget billede (erstatter tegningen)", color_auto: "F\u00f8lg temaet",
     color_white: "Hvid", color_grey: "Gr\u00e5", color_black: "Sort", color_red: "M\u00f8rker\u00f8d",
     controls_activation: "Betjening", activation_tap: "Tryk for at k\u00f8re", activation_hold: "Hold nede for at k\u00f8re", activation_off: "L\u00e5st (hold nede \u00e5bner enheden)",
     type_water_heater: "Varmtvandsbeholder", type_boiler: "Kedel", type_heat_pump: "Varmepumpe",
@@ -1643,7 +1643,7 @@ const T = {
     section_cups: "Liczba fili\u017canek", section_strength: "Moc kawy",
     type_rice_cooker: "Ry\u017cowar", keep_warm: "Podtrzymywanie ciep\u0142a",
     language: "J\u0119zyk", language_auto: "Zgodnie z Home Assistant",
-    illustration_color: "Kolor urz\u0105dzenia", color_auto: "Zgodnie z motywem",
+    illustration_color: "Kolor urz\u0105dzenia", image: "W\u0142asny obraz (zast\u0119puje rysunek)", color_auto: "Zgodnie z motywem",
     color_white: "Bia\u0142y", color_grey: "Szary", color_black: "Czarny", color_red: "Ciemnoczerwony",
     controls_activation: "Sterowanie", activation_tap: "Dotknij, aby uruchomi\u0107", activation_hold: "Przytrzymaj, aby uruchomi\u0107", activation_off: "Zablokowane (przytrzymanie otwiera encj\u0119)",
     type_water_heater: "Podgrzewacz wody", type_boiler: "Kocio\u0142", type_heat_pump: "Pompa ciep\u0142a",
@@ -1782,7 +1782,7 @@ const T = {
     section_cups: "\u676f\u6570", section_strength: "\u5496\u5561\u6d53\u5ea6",
     type_rice_cooker: "\u7535\u996d\u7172", keep_warm: "\u4fdd\u6e29\u4e2d",
     language: "\u8bed\u8a00", language_auto: "\u8ddf\u968f Home Assistant",
-    illustration_color: "\u8bbe\u5907\u989c\u8272", color_auto: "\u8ddf\u968f\u4e3b\u9898",
+    illustration_color: "\u8bbe\u5907\u989c\u8272", image: "\u81ea\u5b9a\u4e49\u56fe\u7247\uff08\u66ff\u6362\u63d2\u56fe\uff09", color_auto: "\u8ddf\u968f\u4e3b\u9898",
     color_white: "\u767d\u8272", color_grey: "\u7070\u8272", color_black: "\u9ed1\u8272", color_red: "\u6df1\u7ea2\u8272",
     controls_activation: "\u63a7\u5236\u6309\u94ae", activation_tap: "\u70b9\u51fb\u6267\u884c", activation_hold: "\u957f\u6309\u6267\u884c", activation_off: "\u9501\u5b9a\uff08\u957f\u6309\u6253\u5f00\u5b9e\u4f53\uff09",
     type_water_heater: "\u70ed\u6c34\u5668", type_boiler: "\u9505\u7089", type_heat_pump: "\u70ed\u6cf5",
@@ -1921,7 +1921,7 @@ const T = {
     section_cups: "Po\u010det \u0161\u00e1lk\u016f", section_strength: "Intenzita k\u00e1vy",
     type_rice_cooker: "R\u00fd\u017eovar", keep_warm: "Udr\u017eov\u00e1n\u00ed teploty",
     language: "Jazyk", language_auto: "Podle Home Assistantu",
-    illustration_color: "Barva spot\u0159ebi\u010de", color_auto: "Podle motivu",
+    illustration_color: "Barva spot\u0159ebi\u010de", image: "Vlastn\u00ed obr\u00e1zek (nahrad\u00ed kresbu)", color_auto: "Podle motivu",
     color_white: "B\u00edl\u00e1", color_grey: "\u0160ed\u00e1", color_black: "\u010cern\u00e1", color_red: "Tmav\u011b \u010derven\u00e1",
     controls_activation: "Ovl\u00e1d\u00e1n\u00ed", activation_tap: "Klepnut\u00edm spustit", activation_hold: "Podr\u017een\u00edm spustit", activation_off: "Uzam\u010deno (podr\u017een\u00ed otev\u0159e entitu)",
     type_water_heater: "Oh\u0159\u00edva\u010d vody", type_boiler: "Kotel", type_heat_pump: "Tepeln\u00e9 \u010derpadlo",
@@ -9759,6 +9759,16 @@ class ApplianceCard extends HTMLElement {
         .top { display: flex; flex-direction: column; align-items: center; text-align: center; cursor: pointer; }
         .machine { position: relative; width: 96px; height: 108px; margin: 0 auto 8px; }
         ${illustrationCss(applianceType, color)}
+        /* An image of the owner's own in place of the drawing. It cannot move,
+           so the state it is in shows as a ring in the state's colour, which
+           breathes while the appliance is at work. */
+        .machine.user-image {
+          width: 108px; height: 108px; border-radius: 16px; overflow: hidden;
+          background: var(--secondary-background-color, rgba(0, 0, 0, 0.04)); box-shadow: 0 0 0 2px ${color};
+        }
+        .machine.user-image img { display: block; width: 100%; height: 100%; object-fit: var(--ac-image-fit, contain); }
+        .machine.user-image.active { animation: ui-breathe 2.4s ease-in-out infinite; animation-delay: var(--anim-offset, 0s); }
+        @keyframes ui-breathe { 0%, 100% { box-shadow: 0 0 0 2px ${color}; } 50% { box-shadow: 0 0 0 2px ${color}, 0 0 12px 2px ${color}; } }
         .name { font-size: 1.2em; font-weight: 500; color: var(--primary-text-color, #1c1c1c); }
         .state-line { font-size: 1.05em; color: ${color}; margin-top: 2px; }
         .info-lines { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
@@ -9816,7 +9826,26 @@ class ApplianceCard extends HTMLElement {
         .action-btn ha-icon { --mdc-icon-size: 20px; }
     `;
 
-    const iconHtml = cfg.compact ? "" : illustrationHtml(applianceType, illustrationCtx);
+    // An image of the owner's own replaces the drawing: one for every state in
+    // `image`, or one per state in `state_images`, looked up on the entity's
+    // raw state first, then on the card's own word for it, then on a
+    // fountain's mode. Only a path or a web address is taken.
+    const userImage = (() => {
+      const okUrl = (u) => typeof u === "string" && /^(\/|https?:\/\/)/i.test(u.trim()) ? u.trim() : "";
+      const map = cfg.state_images && typeof cfg.state_images === "object" ? cfg.state_images : {};
+      const keys = [rawState, norm, illustrationCtx.fountain && illustrationCtx.fountain.mode].filter((k) => k !== undefined && k !== null && k !== "");
+      for (const k of keys) {
+        const u = okUrl(map[String(k)]);
+        if (u) return u;
+      }
+      return okUrl(cfg.image);
+    })();
+    const imageActive = isActiveState(norm) || !!illustrationCtx.feeding || !!(illustrationCtx.fountain && illustrationCtx.fountain.flowing);
+    const imageFit = ["cover", "contain"].includes(cfg.image_fit) ? cfg.image_fit : "contain";
+    const iconHtml = cfg.compact ? ""
+      : userImage ? `
+        <div class="machine user-image${imageActive ? " active" : ""}" style="--ac-image-fit: ${imageFit}"><img src="${esc(userImage)}" alt=""></div>`
+      : illustrationHtml(applianceType, illustrationCtx);
 
     const stripNamePrefix = (friendlyName, entityId) => stripDeviceName(hass, friendlyName, entityId, name);
 
@@ -11001,6 +11030,7 @@ class ApplianceCardEditor extends HTMLElement {
               Object.keys(BODY_COLORS).map((k) => ({ value: k, label: t(hass, `color_${k}`) }))
             ),
           })}
+          ${this._row("image", "image", { placeholder: "/local/my-appliance.png" })}
           ${this._row("compact", "compact", { type: "checkbox" })}
           ${this._row("state_show_raw", "state_show_raw", { type: "checkbox" })}
           ${caps(this._type).readOnly ? "" : this._row("controls_activation", "controls_activation", {
